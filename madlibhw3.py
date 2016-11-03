@@ -1,3 +1,8 @@
+print("Project 3")
+# print("\n")
+# print("-------------------------")
+# print("Part A)")
+
 # Using text2 from the nltk book corpa, create your own version of the
 # MadLib program.  
 
@@ -9,6 +14,9 @@
 # Deliverables:
 # 1) Print the orginal text (150 tokens)
 # 1) Print the new text
+
+
+
 print("START*******")
 import nltk
 import random
@@ -28,22 +36,9 @@ def spaced(word):
 	else:
 		return " " + word
 
-def new_spaced(list2):
-	for words in list2:
-		if words in [",", ".", "?", "!", ":"]:
-			return words
-		else:
-			return " " + words
-orig = []
 final_words = []
-print ("ORIGINAL TEXT")
 s = tagged_tokens[:150]
-for tup in s:
-	orig.append(tup[0])
-orig2 = new_spaced(orig)
-print (orig2)
 
-print("\n")
 for (word, tag) in s:
 	if tag not in substitution_probabilities or random.random() > substitution_probabilities[tag]:
 		final_words.append(spaced(word))
@@ -57,5 +52,24 @@ print("NEW TEXT")
 print("\n")
 print ("".join(final_words))
 
-print("\n\nEND*******")
+def new_spaced(list2):
+	lst=[]
+	for words in list2:
+		if words in [",", ".", "?", "!", ":"]:
+			lst.append(words)
+		else:
+			lst.append(" " + words)
+	print ("".join(lst))
 
+orig = []
+print ("\n")
+print ("ORIGINAL TEXT")
+s = tagged_tokens[:150]
+for tup in s:
+	orig.append(tup[0])
+orig2 = new_spaced(orig)
+
+
+print("\n\nEND*******")
+# print("--------------------------")
+print("Part B")
