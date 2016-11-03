@@ -17,59 +17,59 @@ print("Project 3")
 
 
 
-print("START*******")
-import nltk
-import random
-from nltk.book import *
-from nltk.corpus import gutenberg
-from nltk import word_tokenize,sent_tokenize
+# print("START*******")
+# import nltk
+# import random
+# from nltk.book import *
+# from nltk.corpus import gutenberg
+# from nltk import word_tokenize,sent_tokenize
 
 
-tagged_tokens = nltk.pos_tag(text2) # gives us a tagged list of tuples
+# tagged_tokens = nltk.pos_tag(text2) # gives us a tagged list of tuples
 
-tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective", "RB":"an adverb"}
-substitution_probabilities = {"NN":.15,"NNS":.15,"VB":.1,"JJ":.1, "RB":.1}
+# tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective", "RB":"an adverb"}
+# substitution_probabilities = {"NN":.15,"NNS":.15,"VB":.1,"JJ":.1, "RB":.1}
 
-def spaced(word):
-	if word in [",", ".", "?", "!", ":"]:
-		return word
-	else:
-		return " " + word
+# def spaced(word):
+# 	if word in [",", ".", "?", "!", ":"]:
+# 		return word
+# 	else:
+# 		return " " + word
 
-final_words = []
-s = tagged_tokens[:150]
+# final_words = []
+# s = tagged_tokens[:150]
 
-for (word, tag) in s:
-	if tag not in substitution_probabilities or random.random() > substitution_probabilities[tag]:
-		final_words.append(spaced(word))
-	else:
-		new_word = input("Please enter %s:\n" % (tagmap[tag]))
-		final_words.append(spaced(new_word))
-
-
-print("\n")
-print("NEW TEXT")
-print("\n")
-print ("".join(final_words))
-
-def new_spaced(list2):
-	lst=[]
-	for words in list2:
-		if words in [",", ".", "?", "!", ":"]:
-			lst.append(words)
-		else:
-			lst.append(" " + words)
-	print ("".join(lst))
-
-orig = []
-print ("\n")
-print ("ORIGINAL TEXT")
-s = tagged_tokens[:150]
-for tup in s:
-	orig.append(tup[0])
-orig2 = new_spaced(orig)
+# for (word, tag) in s:
+# 	if tag not in substitution_probabilities or random.random() > substitution_probabilities[tag]:
+# 		final_words.append(spaced(word))
+# 	else:
+# 		new_word = input("Please enter %s:\n" % (tagmap[tag]))
+# 		final_words.append(spaced(new_word))
 
 
-print("\n\nEND*******")
+# print("\n")
+# print("NEW TEXT")
+# print("\n")
+# print ("".join(final_words))
+
+# def new_spaced(list2):
+# 	lst=[]
+# 	for words in list2:
+# 		if words in [",", ".", "?", "!", ":"]:
+# 			lst.append(words)
+# 		else:
+# 			lst.append(" " + words)
+# 	print ("".join(lst))
+
+# orig = []
+# print ("\n")
+# print ("ORIGINAL TEXT")
+# s = tagged_tokens[:150]
+# for tup in s:
+# 	orig.append(tup[0])
+# orig2 = new_spaced(orig)
+
+
+# print("\n\nEND*******")
 # print("--------------------------")
 print("Part B")
