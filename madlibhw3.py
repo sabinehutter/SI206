@@ -1,7 +1,7 @@
 print("Project 3")
-# print("\n")
-# print("-------------------------")
-# print("Part A)")
+print("\n")
+print("-------------------------")
+print("Part A)")
 
 # Using text2 from the nltk book corpa, create your own version of the
 # MadLib program.  
@@ -14,6 +14,10 @@ print("Project 3")
 # Deliverables:
 # 1) Print the orginal text (150 tokens)
 # 1) Print the new text
+#Sources
+#https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+#http://stackoverflow.com/questions/32238616/git-push-fatal-origin-does-not-appear-to-be-a-git-repository-fatal-could-n/32700354
+#
 
 
 
@@ -70,6 +74,43 @@ print("Project 3")
 # orig2 = new_spaced(orig)
 
 
-# print("\n\nEND*******")
-# print("--------------------------")
-print("Part B")
+print("\n\nEND*******")
+print("--------------------------")
+# print("Part B")
+
+# import requests
+# from bs4 import BeautifulSoup
+
+# base_url = 'http://collemc.people.si.umich.edu/data/bshw3StarterFile.html'
+# r = requests.get(base_url) #requesting information from the colleens website 
+# soup = BeautifulSoup(r.text, "html.parser")
+# text_word_soup= soup.prettify()
+# print (text_word_soup)
+
+print("--------------------------")
+# print("Part C")
+import tweepy
+
+Consumer_key = "OFo7efosfPpH131PK7YB4nmjn"
+#input("Please enter user consumer key: ")
+Consumer_secret = "XbUKINvf1um6ZBlsIlsclSBycrrHDLAzLJNQUIMpP7I14UtcDE"
+#input("Please enter user comsumer secret: ")
+Access_token = "395599302-ULYQLV4AbbogaAN8XhJEQmXWIbuxnD3YVjITrIgr"
+#input("Please enter user access token: ")
+Access_token_secret = "BJ4vXcXbjvdm8NimvegZhi7i3AfZ21bFVFEaHmHyXavbD"
+#input("Please enter user access token secret: ")
+
+auth = tweepy.OAuthHandler(Consumer_key, Consumer_secret)
+auth.set_access_token(Access_token, Access_token_secret)
+api_authorization = tweepy.API(auth)
+api_authorization.update_status(input("Enter what you would like to tweet: "))
+
+#http://stackoverflow.com/questions/19337672/post-tweet-with-tweepy
+#Used code from here
+
+#use open to write an html file
+#create our own html file as the last step
+#use tweepy
+
+
+
