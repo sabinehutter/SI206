@@ -76,7 +76,7 @@ print("Part A)")
 
 print("\n\nEND*******")
 print("--------------------------")
-# print("Part B")
+print("Part B")
 
 # import requests
 # from bs4 import BeautifulSoup
@@ -86,24 +86,42 @@ print("--------------------------")
 # soup = BeautifulSoup(r.text, "html.parser")
 # text_word_soup= soup.prettify()
 # print (text_word_soup)
-
+print('\n')
 print("--------------------------")
-# print("Part C")
-import tweepy
+print("Part C")
+# import tweepy
+# import requests
+# import os
 
-Consumer_key = "OFo7efosfPpH131PK7YB4nmjn"
-#input("Please enter user consumer key: ")
-Consumer_secret = "XbUKINvf1um6ZBlsIlsclSBycrrHDLAzLJNQUIMpP7I14UtcDE"
-#input("Please enter user comsumer secret: ")
-Access_token = "395599302-ULYQLV4AbbogaAN8XhJEQmXWIbuxnD3YVjITrIgr"
-#input("Please enter user access token: ")
-Access_token_secret = "BJ4vXcXbjvdm8NimvegZhi7i3AfZ21bFVFEaHmHyXavbD"
-#input("Please enter user access token secret: ")
 
-auth = tweepy.OAuthHandler(Consumer_key, Consumer_secret)
-auth.set_access_token(Access_token, Access_token_secret)
-api_authorization = tweepy.API(auth)
-api_authorization.update_status(input("Enter what you would like to tweet: "))
+
+# Consumer_key = "OFo7efosfPpH131PK7YB4nmjn"
+# 	#input("Please enter user consumer key: ")
+# Consumer_secret = "XbUKINvf1um6ZBlsIlsclSBycrrHDLAzLJNQUIMpP7I14UtcDE"
+# 	#input("Please enter user comsumer secret: ")
+# Access_token = "395599302-ULYQLV4AbbogaAN8XhJEQmXWIbuxnD3YVjITrIgr"
+# 	#input("Please enter user access token: ")
+# Access_token_secret = "BJ4vXcXbjvdm8NimvegZhi7i3AfZ21bFVFEaHmHyXavbD"
+# 	#input("Please enter user access token secret: ")
+# auth = tweepy.OAuthHandler(Consumer_key, Consumer_secret)
+# auth.secure = True
+# auth.set_access_token(Access_token, Access_token_secret)
+# api = tweepy.API(auth)
+# message = "#UMSI-206 #Proj3"
+# api.update_status_with_media('puppy.jpg', status = message)
+# url = "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwjXy8Xi75TQAhWBz4MKHdjEDpQQjRwIBw&url=http%3A%2F%2Fdogtime.com%2Fpuppies%2F255-puppies&bvm=bv.137904068,d.amc&psig=AFQjCNFBpT0o_i614WofAN4nFul_g4vEbA&ust=1478547220596121"
+# message2 = "#UMSI-206 #Proj3"
+# filename = 'temp.jpg'
+# requests = requests.get(url, stream = True)
+# if requests.status_code == 200:
+# 	with open(filename, 'wb') as image:
+# 		for stuff in requests:
+# 			image.write(stuff)
+# 	api.update_status_with_media(filename, status = message)
+# 	os.remove(filename)
+# else:
+# 	print("Error with uploading image")
+
 
 #http://stackoverflow.com/questions/19337672/post-tweet-with-tweepy
 #Used code from here
@@ -112,5 +130,26 @@ api_authorization.update_status(input("Enter what you would like to tweet: "))
 #create our own html file as the last step
 #use tweepy
 
+print('\n')
+print("--------------------------")
+print("Part D")
+
+import tweepy
+from textblob import TextBlob
+
+# Unique code from Twitter
 
 
+# Boilerplate code here
+auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
+auth.set_access_token(access_token,access_token_secret)
+
+api = tweepy.API(auth)
+#Now we can Create Tweets, Delete Tweets, and Find Twitter Users
+
+public_tweets = api.search('"Gilmore Girls" @netflix')
+
+for tweet in public_tweets:
+	print(tweet.text)
+	analysis = TextBlob(tweet.text)
+	print(analysis.sentiment)
