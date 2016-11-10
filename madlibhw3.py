@@ -72,8 +72,7 @@ print("Part A)")
 # for tup in s:
 # 	orig.append(tup[0])
 # orig2 = new_spaced(orig)
-rich eisen
-brl
+
 print("\n\nEND*******")
 print("--------------------------")
 print("Part B")
@@ -84,11 +83,36 @@ from bs4 import BeautifulSoup
 base_url = 'http://collemc.people.si.umich.edu/data/bshw3StarterFile.html'
 r = requests.get(base_url) #requesting information from the colleens website 
 soup = BeautifulSoup(r.text, "html.parser")
-text_word_soup= soup.prettify()
+var = soup.prettify()
+# for lines in var:
+# 	lines.replace('student', 'AMAZING student')
+# print(var)
+
+s = []
+r = []
+for img in soup.findAll("img"):
+	# print (img)
+	img_tags = img['src']
+	if "logo2.png" not in img_tags:
+		print(img)
+		# print(img['src'].replace('logo2.png', '/Users/sabinehutter/Desktop/206class/rew-repo/SI206/HW3-StudentCopy/media'))
+# 	else:
+# 		img['src'].replace('logo2.png', '/Users/sabinehutter/Desktop/206class/rew-repo/SI206/HW3-StudentCopy/media')
+# print(s)
+# print(r)
+
+# html_file = open("beautifulsoup.html", "w")
+# html_file.write(var)
+# html_file.close()
+
+#logo2.hp
+#href
+
+
 # 
+#.fml create html
 
 
-print (text_word_soup)
 print('\n')
 print("--------------------------")
 print("Part C")
@@ -96,15 +120,15 @@ print("Part C")
 # import requests
 # import os
 
+# 
 
 
-
-	#input("Please enter user access token secret: ")
-auth = tweepy.OAuthHandler(Consumer_key, Consumer_secret)
-auth.set_access_token(Access_token, Access_token_secret)
-api_auth = tweepy.API(auth)
-message = "#UMSI-206 #Proj3"
-api_auth.updatej_with_media('puppy.jpg', status = message)
+# 	#input("Please enter user access token secret: ")
+# auth = tweepy.OAuthHandler(Consumer_key, Consumer_secret)
+# auth.set_access_token(Access_token, Access_token_secret)
+# api_auth = tweepy.API(auth)
+# message = "#UMSI-206 #Proj3"
+# api_auth.updatej_with_media('puppy.jpg', status = message)
 
 
 #http://stackoverflow.com/questions/19337672/post-tweet-with-tweepy
@@ -114,18 +138,14 @@ api_auth.updatej_with_media('puppy.jpg', status = message)
 #create our own html file as the last step
 #use tweepy
 
-# print('\n')
-# print("--------------------------")
-# print("Part D")
+print('\n')
+print("--------------------------")
+print("Part D")
 
 # import tweepy
 # from textblob import TextBlob
 
-# # Unique code from Twitter
-# access_token = "395599302-ULYQLV4AbbogaAN8XhJEQmXWIbuxnD3YVjITrIgr"
-# access_token_secret = "BJ4vXcXbjvdm8NimvegZhi7i3AfZ21bFVFEaHmHyXavbD"
-# consumer_key = "OFo7efosfPpH131PK7YB4nmjn"
-# consumer_secret = "XbUKINvf1um6ZBlsIlsclSBycrrHDLAzLJNQUIMpP7I14UtcDE"
+
 
 # # Boilerplate code here
 # auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
